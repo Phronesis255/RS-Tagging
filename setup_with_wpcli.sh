@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# Input file
-INPUT_FILE="classified_integrated.csv"
+# Check if a file name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <csv_file>"
+  exit 1
+fi
+
+# Input file (first argument to the script)
+INPUT_FILE="$1"
 
 # Output to log file
 LOG_FILE="update_tags_log.txt"
